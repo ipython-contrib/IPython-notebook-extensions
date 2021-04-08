@@ -181,9 +181,17 @@
     });
 
     var make_link = function(h, toc_mod_id) {
+
+        // markdown cells 'h' elements have automatically a 'a .anchor-link' appended
+        var href = h.find('.anchor-link').attr('href');
+        if (href == undefined) {
+            // user created 'h' elements doe not have that -> get the id
+            href = "#" + h.attr('id');
+        } 
+
         var a = $('<a>')
             .attr({
-                'href': h.find('.anchor-link').attr('href'),
+                'href': href,
                 'data-toc-modified-id': toc_mod_id,
             });
         // get the text *excluding* the link text, whatever it may be
@@ -193,6 +201,7 @@
         a.on('click', callback_toc_link_click);
         return a;
     };
+
 
     function highlight_toc_item(evt, data) {
         var c = $(data.cell.element);
@@ -586,7 +595,7 @@
         // excepting any header which contains an html tag with class 'tocSkip'
         // eg in ## title <a class='tocSkip'>,
         // or the ToC cell.
-        all_headers = $('.text_cell_render').find('[id]:header:not(:has(.tocSkip))');
+        all_headers = $('.text_cell_render, .output_subarea').find('[id]:header:not(:has(.tocSkip))');
         var min_lvl = 1 + Number(Boolean(cfg.skip_h1_title)),
             lbl_ary = [];
         for (; min_lvl <= 6; min_lvl++) {
