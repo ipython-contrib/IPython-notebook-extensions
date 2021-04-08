@@ -94,7 +94,7 @@ All of the nbextensions in this repo are provided as parts of a python package,
 which is installable in the usual manner, using `pip` or the `setup.py` script.
 To install the current version from PyPi, simply type
 
-    pip install jupyter_contrib_nbextensions
+    pip install jupyter-contrib-nbextensions
 
 Alternatively, you can install directly from the current master branch of the
 repository
