@@ -113,6 +113,10 @@ The available options are:
   cells. The template uses an ES2015-like syntax, but replaces only the exact
   strings `${start_time}`, plus (if defined) `${end_time}` and `${duration}`.
   Defaults to `'execution queued ${start_time}'`.
+  
+* `ExecuteTime.hide_shorter_than_threshold_in_ms`: Threshold to hide execution 
+  timings that are short. Set this to zero to show all timings.
+  Defaults to `0`.
 
 
 

@@ -86,3 +86,12 @@ Parameters:
     replacement tokens.
   default: 'execution queued ${start_time}'
   input_type: text
+  
+- name: ExecuteTime.hide_shorter_than_threshold_in_ms
+  description: |
+    Hide execution timings that are shorter than this threshold (in ms). Set to 
+    zero to show all timings.
+  default: 0
+  input_type: number
+  step: 1
+  min: 1
