@@ -35,7 +35,7 @@ It is possible to extract one language from the multilanguage notebook. An expor
 ```
 jupyter nbconvert --to selectLanguage --NotebookLangExporter.language=lang  FILE.ipynb 
 ```
-where the `lang` parameter denotes a valid language abbreviation e.g. en, fr, ar, sp. See the full list <a href='languages.js'> here.</a>
+where the `lang` parameter denotes a valid language abbreviation e.g. en, fr, ar, sp. See the full list <a href='https://github.com/ipython-contrib/jupyter_contrib_nbextensions/blob/master/src/jupyter_contrib_nbextensions/nbextensions/nbTranslate/languages.js'> here.</a>
 
 
 Installation
