@@ -1,0 +1,16 @@
+Type: IPython Notebook Extension
+Compatibility: 3.x, 4.x, 5.x, 6.x
+Name: Exception Notifier
+Main: exception_notifier.js
+Link: README.md
+Description: >
+  While running all cells or each cell in the notebook, if an exception occurs, you will get a notification
+Parameters:
+- name: notify.sticky
+  description: Require interactions on notifications to dismiss them
+  input_type: checkbox
+  default: true
+- name: notify.play_sound
+  description: Play notification sound
+  input_type: checkbox
+  default: true
