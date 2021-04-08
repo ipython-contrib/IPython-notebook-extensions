@@ -24,16 +24,13 @@ define(['./kernel_exec_on_cell'], function(kernel_exec_on_cell) {
     cfg.kernel_config_map = { // map of parameters for supported kernels
         "python": {
             "library": ["import json",
-            "def yapf_reformat(cell_text):", 
-            "    import yapf.yapflib.yapf_api",
-            "    from yapf import file_resources",
-            "    import os",
+            "def black_reformat(cell_text):", 
+            "    import black",
             "    import re",
-            "    style_config = file_resources.GetDefaultStyleForDir(os.getcwd())",
             "    cell_text = re.sub('^%', '#%#', cell_text, flags=re.M)",
-            "    reformated_text = yapf.yapflib.yapf_api.FormatCode(cell_text, style_config=style_config)[0]",
+            "    reformated_text = black.format_str(cell_text, mode=black.FileMode(line_length=88))",
             "    return re.sub('^#%#', '%', reformated_text, flags=re.M)"].join("\n"),
-            "prefix": "print(json.dumps(yapf_reformat(u",
+            "prefix": "print(json.dumps(black_reformat(u",
             "postfix": ")))"
         },
         "r": {
