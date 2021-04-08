@@ -97,8 +97,11 @@ define([
         },
         emacs: {
             add: {
+                keyMap: {
+                    "Ctrl-Shift-Z": "redo",
+                },
                 extraKeys: {
-                    "Ctrl-Y": "yank_no_selection"
+                    "Ctrl-Y": "yank_no_selection",
                 },
                 command_shortcuts: {
                     "Ctrl-N": "jupyter-notebook:select-next-cell",
@@ -145,7 +148,7 @@ define([
 
     var server_config = Jupyter.notebook.config;
     // make sure config is loaded before making initial changes
-    var initialize = function () {
+    var initialize = function() {
         save_starting_state();
         // initialize last stored value or default
         switch_keymap(get_stored_keymap());
@@ -285,8 +288,8 @@ define([
     }
 
     function add_bindings(add, mode) {
-        _.extend(CodeMirror.keyMap[mode], add.keyMap);
-        _.extend(cm_default.extraKeys, add.extraKeys);
+        _.extend(CodeMirror.keyMap[mode], CodeMirror.normalizeKeyMap(add.keyMap));
+        _.extend(cm_default.extraKeys, CodeMirror.normalizeKeyMap(add.extraKeys));
 
         if (add.command_shortcuts) {
             update_shortcuts(command_shortcuts, add.command_shortcuts);
@@ -362,7 +365,7 @@ define([
     window.switch_keymap = switch_keymap;
 
     return {
-        load_ipython_extension: function () {
+        load_ipython_extension: function() {
             return Jupyter.notebook.config.loaded
                 .then(initialize)
                 .then(create_menu);
