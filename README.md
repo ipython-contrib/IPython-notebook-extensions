@@ -195,6 +195,17 @@ To disable the extension again, use
 
     jupyter nbextension disable <nbextension require path>
 
+**Notice**, if you are using the notebook extension which need request the server extension.
+You need to enable the server extension before starting the jupyter notebook.
+This operation only needs to be done once. Currently, there is only one notebook extension
+needs the server extension. That is `jupyter_tabnine`. To enable it's server extension, use
+
+    jupyter serverextension enable --py jupyter_tabnine
+
+To disable it's server extension again, use
+
+    jupyter serverextension disable --py jupyter_tabnine
+
 **Alternatively**, and more conveniently, you can use the
 [jupyter_nbextensions_configurator](https://github.com/Jupyter-contrib/jupyter_nbextensions_configurator)
 server extension, which is installed as a dependency of this repo, and can be

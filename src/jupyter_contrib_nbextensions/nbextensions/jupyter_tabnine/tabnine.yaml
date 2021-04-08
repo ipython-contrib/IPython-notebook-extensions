@@ -1,0 +1,47 @@
+Type: Jupyter Notebook Extension
+Main: main.js
+Name: Jupyter TabNine
+Link: README.md
+Description: |
+  Provide code auto-completion with deep learning for every keypress.
+Compatibility: 4.x, 5.x
+Parameters:
+- name: jupyter_tabnine.before_line_limit
+  description: |
+    maximum number of lines before for context generation,
+    too many lines will slow down the request. -1 means Infinity,
+    thus the lines will equal to number of lines before current line.
+  input_type: number
+  default: 10
+- name: jupyter_tabnine.after_line_limit
+  description: |
+    maximum number of lines after for context generation,
+    too many lines will slow down the request. -1 means Infinity,
+    thus the lines will equal to number of lines after current line.
+  input_type: number
+  default: 10
+- name: jupyter_tabnine.options_limit
+  description: |
+    maximum number of options that will be shown
+  input_type: number
+  default: 10
+- name: jupyter_tabnine.assist_active
+  description: |
+    Enable continuous code auto-completion when notebook is first opened, or
+    if false, only when selected from extensions menu.
+  input_type: checkbox
+  default: true
+- name: jupyter_tabnine.assist_delay
+  description: |
+    delay in milliseconds between keypress & completion request.
+  input_type: number
+  min: 0
+  step: 1
+  default: 0
+- name: jupyter_tabnine.remote_server_url
+  description: |
+    remote server url, you may want to use a remote server to handle client request.
+    this can spped up the request handling depending on the server configuration.
+    refer to https://github.com/wenmin-wu/jupyter-tabnine to see how to deploy remote server.
+  input_type: string
+  default: ''
