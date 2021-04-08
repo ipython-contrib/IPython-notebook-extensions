@@ -1,0 +1,17 @@
+Type: Jupyter Notebook Extension
+Name: Goto Error
+Description: Clicking on errors opens source file.
+Link: README.md
+Main: main.js
+Compatibility: 4.x, 5.x
+Parameters:
+- name: gotoerror.prefix
+  description: |
+    If your source code is in blah/site-packages/...then you need to make a symbolic link to blah/site-packages called "site-packages" and set this parameter to blah. See README for more details.
+  input_type: string
+  default:
+- name: gotoerror.prefix2
+  description: |
+    An optional alternative to the above prefix. Useful if you use both virtual and non-virtual environments.
+  input_type: string
+  default:

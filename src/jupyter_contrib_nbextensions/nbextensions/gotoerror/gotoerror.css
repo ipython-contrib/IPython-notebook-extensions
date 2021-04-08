@@ -1,0 +1,51 @@
+#nbextension-gotoerror {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    border-left: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+    box-shadow: -3px 3px 5px #aaa;
+    z-index: 105;
+    display: none;
+}
+
+.gotoerror-close-btn {
+    display: none;
+    position: relative;
+    float: right;
+    font-size: 16px;
+    padding-top: 8px;
+    z-index: 106;
+    opacity: 0.2;
+}
+
+.gotoerror-close-btn:hover {
+    opacity: 1;
+}
+
+.gotoerror-filename {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.gotoerror-code {
+    overflow: auto;
+}
+
+.gotoerror-stackoverflow-btn {
+    border: 0;
+    font-size: 11px;
+    margin: 0px 4px;
+    padding: 6px;
+    text-transform: uppercase;
+    background-color: #f7f7f7;
+    box-shadow: 0px 3px 4px #aaa;
+    user-select: none;
+}
+
+.gotoerror-stackoverflow-btn:hover {
+    background-color: #e0e0e0;
+}
