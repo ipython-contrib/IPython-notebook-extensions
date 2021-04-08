@@ -10,6 +10,9 @@ Parameters:
   description: Automatically number notebook's sections
   input_type: checkbox
   default: true
+- name: toc2.section_number_prefix
+  description: Add a prefix to section numbers
+  default: ''
 - name: toc2.threshold
   description: Maximum level of nested sections to display on the tables of contents
   input_type: number
@@ -23,6 +26,11 @@ Parameters:
     See the README for details, caveats and alternatives
   input_type: checkbox
   default: false
+
+- name: toc2.analyse_level
+  description: Show hierachy in headings instead of making them flat
+  input_type: checkbox
+  default: true
 
 - name: toc2.toc_cell
   description: Add a Table of Contents cell at the top of the notebook

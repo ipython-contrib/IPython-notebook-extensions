@@ -44,6 +44,9 @@
         toc_position: {},
         toc_section_display: true,
         toc_window_display: false,
+        section_number_prefix: '',
+        analyse_level: true,
+        dom_search_pattern: '[id]:header',
     };
     $.extend(true, default_cfg, metadata_settings);
 
@@ -581,12 +584,18 @@
         // update toc element
         $("#toc").empty().append(ul);
 
+        process_table(cfg, ul, cfg);
+
+    }
+
+    var process_table = function(cfg, ul, tablecfg) {
+
         var depth = 1;
         // update all headers with id that are in rendered text cell outputs,
         // excepting any header which contains an html tag with class 'tocSkip'
         // eg in ## title <a class='tocSkip'>,
         // or the ToC cell.
-        all_headers = $('.text_cell_render').find('[id]:header:not(:has(.tocSkip))');
+        all_headers = $('.text_cell_render').find( tablecfg.dom_search_pattern.split(",").map(x => x+":not(:has(.tocSkip))").join(",") );
         var min_lvl = 1 + Number(Boolean(cfg.skip_h1_title)),
             lbl_ary = [];
         for (; min_lvl <= 6; min_lvl++) {
@@ -604,15 +613,19 @@
             // remove pre-existing number
             $(h).children('.toc-item-num').remove();
 
-            var level = parseInt(h.tagName.slice(1), 10) - min_lvl + 1;
-            // skip below threshold, or h1 ruled out by cfg.skip_h1_title
-            if (level < 1 || level > cfg.threshold) {
-                return;
+            if (tablecfg.analyse_level) {
+                var level = parseInt(h.tagName.slice(1), 10) - min_lvl + 1;
+                // skip below threshold, or h1 ruled out by cfg.skip_h1_title
+                if (level < 1 || level > cfg.threshold) {
+                    return;
+                }
+            } else {
+                var level = 1;
             }
             h = $(h);
             // numbered heading labels
-            var num_str = incr_lbl(lbl_ary, level - 1).join('.');
-            if (cfg.number_sections) {
+            var num_str = tablecfg.section_number_prefix+incr_lbl(lbl_ary, level - 1).join('.');
+            if (tablecfg.number_sections) {
                 $('<span>')
                     .text(num_str + '\u00a0\u00a0')
                     .addClass('toc-item-num')
@@ -660,7 +673,7 @@
         }
 
         // if cfg.toc_cell=true, find/add and update a toc cell in the notebook.
-        process_cell_toc(cfg, st);
+        process_cell_toc(tablecfg);
 
         // add collapse controls
         $('<i>')
@@ -734,13 +747,16 @@
                     'The settings won\'t persist in non-live notebooks though.'),
                 build_setting_input('number_sections', 'Automatically number headings', 'checkbox'),
                 build_setting_input('skip_h1_title', 'Leave h1 items out of ToC', 'checkbox'),
+                build_setting_input('analyse_level', 'Show hierarchy in headings', 'checkbox'),
                 build_setting_input('base_numbering', 'Begin numbering at'),
+                build_setting_input('section_number_prefix', 'Add a prefix to section numbers'),
                 build_setting_input('toc_cell', 'Add notebook ToC cell', 'checkbox'),
                 build_setting_input('title_cell', 'ToC cell title'),
                 build_setting_input('title_sidebar', 'Sidebar/window title'),
                 build_setting_input('sideBar', 'Display as a sidebar (otherwise as a floating window)', 'checkbox'),
                 build_setting_input('toc_window_display', 'Display ToC window/sidebar at startup', 'checkbox'),
                 build_setting_input('toc_section_display', 'Expand window/sidebar at startup', 'checkbox'),
+                build_setting_input('dom_search_pattern', 'Find headings in document based on the following dom pattern')
             ])
             .appendTo(dialog_content);
         $('<div class="modal-footer">')
