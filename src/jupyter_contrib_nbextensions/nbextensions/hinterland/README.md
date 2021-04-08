@@ -8,6 +8,11 @@ The nbextension adds an item to the help menu to turn auto-hinting on and off,
 and offers some options for configuration:
 
 
+Enabling
+-------
+* jupyter nbextension enable hinterland/hinterland
+
+
 Options
 -------
 
