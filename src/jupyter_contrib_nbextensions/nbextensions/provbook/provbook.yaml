@@ -1,0 +1,7 @@
+Type: Jupyter Notebook Extension
+Name: ProvBook
+Description: Capture and display the provenance of the notebook.
+Link: readme.md
+Icon: icon.png
+Main: main.js
+Compatibility: 4.x, 5.x

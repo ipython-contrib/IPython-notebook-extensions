@@ -1,0 +1,14 @@
+.slider_area {
+  background-color: #EEEEEE;
+  border: 1px solid #BDBDBD;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.para_text_wrap {
+  white-space: pre-wrap;
+}
+
+p.thick {
+  font-weight: bold;
+}
