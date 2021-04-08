@@ -5,3 +5,8 @@ Name: Hide input
 Icon: icon.png
 Description: "toggle display of selected code cell's input"
 Link: readme.md
+Parameters:
+- name: hide_input.hide_celltoolbar
+  description: Hide the celltoolbar while hiding input cells
+  input_choice: checkbox
+  default: true
