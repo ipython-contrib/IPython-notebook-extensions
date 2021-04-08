@@ -147,8 +147,10 @@ define([
             // kernel is already ready
             run_init_cells();
         }
-        // whenever a (new) kernel  becomes ready, run all initialization cells
-        events.on('kernel_ready.Kernel', run_init_cells);
+        else {
+            // whenever a (new) kernel  becomes ready, run all initialization cells
+            events.on('kernel_ready.Kernel', run_init_cells);
+        }
     }
 
     return {
