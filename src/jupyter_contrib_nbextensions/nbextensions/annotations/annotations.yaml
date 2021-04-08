@@ -1,0 +1,7 @@
+Type: IPython Notebook Extension
+Name: Cell annotation extension
+Description: Adds annotations cell toolbar.
+Link: https://github.com/scr4t/ipython-annotate
+Icon: icon.png
+Main: main.js
+Compatibility: 4.x, 5.x 
