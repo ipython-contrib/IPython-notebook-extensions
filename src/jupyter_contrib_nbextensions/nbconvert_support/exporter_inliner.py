@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Nbconvert exporter to inline css & js for collapsible_headings."""
 
 from __future__ import print_function

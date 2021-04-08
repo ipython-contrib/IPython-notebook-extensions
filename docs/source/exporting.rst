@@ -56,6 +56,11 @@ Embedding images in notebooks
 
 .. autoclass:: EmbedImagesPreprocessor
 
+    Allows embedding images (pdf, svg and raster images) in the notebook itself as base64 encoded binaries,
+    instead of linking to them. This makes distributing notebooks easier. Example:
+
+        jupyter nbconvert --to ipynb mynotebook.ipynb
+
 
 Postprocessors
 --------------
@@ -84,9 +89,20 @@ Embed images in HTML
 .. autoclass:: EmbedHTMLExporter
 
     Allows embedding images (pdf, svg and raster images) into a HTML file as base64 encoded binary,
-    instead of linking to them.
+    instead of linking to them. Example:
 
         jupyter nbconvert --to html_embed --NbConvertApp.codefolding=True mynotebook.ipynb
+
+
+Embed images in HTML
+^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: EmbedSlidesExporter
+
+    Allows embedding images (pdf, svg and raster images) into a HTML slideshow as base64 encoded binary,
+    instead of linking to them. This enables making standalone slideshows. Example:
+
+        jupyter nbconvert --to slides_embed mynotebook.ipynb
 
 
 Export Table of Contents

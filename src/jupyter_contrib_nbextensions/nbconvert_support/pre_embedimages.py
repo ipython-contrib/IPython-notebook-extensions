@@ -85,7 +85,7 @@ class EmbedImagesPreprocessor(Preprocessor):
                 Binary image data
 
         """
-        if imgformat in ['png', 'jpg']:
+        if imgformat in ['png', 'jpeg']:
             from io import BytesIO
             try:
                 from PIL import Image
@@ -100,7 +100,7 @@ class EmbedImagesPreprocessor(Preprocessor):
                 newim = im.resize(newsize)
                 fp = BytesIO()
                 # PIL requires JPEG instead of JPG
-                newim.save(fp, format=imgformat.replace('jpg', 'jpeg'))
+                newim.save(fp, format=imgformat)
                 imgdata = fp.getvalue()
                 fp.close()
                 self.log.debug("Resized %d x %d image %s to size %d x %d pixels" %
@@ -110,7 +110,7 @@ class EmbedImagesPreprocessor(Preprocessor):
     def replfunc_md(self, match):
         """Read image and store as base64 encoded attachment"""
         url = match.group(2)
-        imgformat = url.split('.')[-1].lower()
+        imgformat = url.split('.')[-1].lower().replace('jpg', 'jpeg')
         if url.startswith('http'):
             if self.embed_remote_images:
                 data = urlopen(url).read()

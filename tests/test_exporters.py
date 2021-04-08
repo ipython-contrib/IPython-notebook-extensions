@@ -25,14 +25,14 @@ def _with_tmp_cwd(func):
 
 class TestNbConvertExporters(TestsBase):
 
-    def check_html(self, nb, exporter_name, check_func):
+    def check_html(self, nb, exporter_name, check_func, extension='.html'):
         nb_basename = 'notebook'
         nb_src_filename = nb_basename + '.ipynb'
         with io.open(nb_src_filename, 'w', encoding='utf-8') as f:
             write(nb, f, 4)
 
         # convert with embedding exporter
-        nb_dst_filename = nb_basename + '.html'
+        nb_dst_filename = nb_basename + extension
         self.nbconvert('--to {} "{}"'.format(exporter_name, nb_src_filename))
 
         with open(nb_dst_filename, 'rb') as f:
@@ -58,6 +58,24 @@ class TestNbConvertExporters(TestsBase):
                 assert url.startswith('data')
 
         self.check_html(nb, 'html_embed', check_func=check)
+
+    @_with_tmp_cwd
+    def test_embedslides(self):
+        """Test exporter for embedding images into slides"""
+        nb = v4.new_notebook(cells=[
+            v4.new_code_cell(source="a = 'world'"),
+            v4.new_markdown_cell(
+                source="![testimage]({})".format(path_in_data('icon.png'))
+            ),
+        ])
+
+        def check(byte_string, root_node):
+            nodes = root_node.findall(".//img")
+            for n in nodes:
+                url = n.attrib["src"]
+                assert url.startswith('data')
+
+        self.check_html(nb, 'slides_embed', check_func=check, extension='.slides.html')
 
     @_with_tmp_cwd
     def test_htmltoc2(self):

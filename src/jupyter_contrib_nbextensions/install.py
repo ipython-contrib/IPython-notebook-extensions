@@ -129,6 +129,7 @@ def toggle_install_config(install, user=False, sys_prefix=False,
         logger.info('--  Configuring nbconvert preprocessors')
     proc_mod = 'jupyter_contrib_nbextensions.nbconvert_support'
     _update_config_list(config, 'Exporter.preprocessors', [
+        proc_mod + '.EmbedImagesPreprocessor',
         proc_mod + '.CodeFoldingPreprocessor',
         proc_mod + '.PyMarkdownPreprocessor',
     ], install)
