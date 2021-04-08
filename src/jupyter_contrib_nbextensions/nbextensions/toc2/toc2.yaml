@@ -37,6 +37,11 @@ Parameters:
   description: Default title used for ToC sidebar/window (can also be set per-notebook)
   default: 'Contents'
 
+- name: toc2.lock_sidebar
+  description: Lock sidebar, ie do not enable moving it as a floating window (can also be set per-notebook)
+  input_type: checkbox
+  default: false
+
 - name: toc2.toc_window_display
   description: Display toc window/sidebar at startup
   input_type: checkbox

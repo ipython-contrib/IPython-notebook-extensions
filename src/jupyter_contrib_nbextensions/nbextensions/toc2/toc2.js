@@ -40,6 +40,7 @@
         base_numbering: 1,
         title_cell: 'Table of Contents',
         title_sidebar: 'Contents',
+        lock_sidebar: false,
         toc_cell: false,
         toc_position: {},
         toc_section_display: true,
@@ -362,6 +363,11 @@
 
         // enable dragging and save position on stop moving
         toc_wrapper.draggable({
+            start: function(event, ui) {
+                 // disable drag if sidebar exists and lock is true
+                 if (cfg.sideBar && cfg.lock_sidebar){
+                    event.preventDefault();} 
+                },
             drag: function(event, ui) {
                 var make_sidebar = ui.position.left < 20; // 20 is snapTolerance
                 if (make_sidebar) {
@@ -739,6 +745,7 @@
                 build_setting_input('title_cell', 'ToC cell title'),
                 build_setting_input('title_sidebar', 'Sidebar/window title'),
                 build_setting_input('sideBar', 'Display as a sidebar (otherwise as a floating window)', 'checkbox'),
+                build_setting_input('lock_sidebar', 'Lock sidebar', 'checkbox'),
                 build_setting_input('toc_window_display', 'Display ToC window/sidebar at startup', 'checkbox'),
                 build_setting_input('toc_section_display', 'Expand window/sidebar at startup', 'checkbox'),
             ])

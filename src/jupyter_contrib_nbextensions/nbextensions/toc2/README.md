@@ -43,6 +43,7 @@ facility, included with
 Configurable options include:
 
 - Display Table of Contents as a sidebar (otherwise as a floating window; default: true)
+- Lock sidebar on the left - disable drag as a floating window (default: false)
 - Title of the sidebar/window (default: `Contents`)
 - The maximum depth of headers to display on toc (with a default of 4)
 - The state of the toc cell (default: false, ie not present)
@@ -145,5 +146,6 @@ This option requires the IPython kernel and is not present with other kernels.
 - @jfbercher Feb 2018, Option to define a number to begin numbering with.
 - @jcb91 March 2018, Add controls for all per-notebook metadata options
 - @jfbercher December 2018, toc2 history. Moves into the toc2 history of jumps into the notebook, using the forward-back browser buttons.
-- @zthxxx, April 2018, fix toc2.js load failed with working in non-live notebook (with navigation menu enabled)
-- @jfbercher April 2018, Some export tuning 
+- @zthxxx, April 2019, fix toc2.js load failed with working in non-live notebook (with navigation menu enabled)
+- @jfbercher April 2019, Some export tuning 
+- @jfbercher May 2019, Option to lock sidebar

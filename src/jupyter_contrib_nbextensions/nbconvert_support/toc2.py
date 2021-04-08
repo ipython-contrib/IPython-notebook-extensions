@@ -1,7 +1,7 @@
 """Toc2 exporter class, TocExporter"""
 
 # -----------------------------------------------------------------------------
-# Copyright (c) 2016, the IPython IPython-Contrib Development Team.
+# Copyright (c) 2016-2019, the IPython IPython-Contrib Development Team.
 #
 # Distributed under the terms of the Modified BSD License.
 #
