@@ -1,0 +1,52 @@
+Type: Jupyter Notebook Extension
+Name: Rope Refactor (Combined)
+Description: Basic refactoring functionality for python notebook cells using rope
+Link: README.md
+Main: main.js
+Compatibility: 4.x, 5.x
+Parameters:
+
+- name: rope_refactor.hotkeys.rename
+  description: "Rename"
+  input_type: hotkey
+  default: shift-f6
+
+- name: rope_refactor.hotkeys.inline
+  description: "Inline"
+  input_type: hotkey
+  default: alt-meta-;
+
+- name: rope_refactor.hotkeys.extract_method
+  description: "Extract method"
+  input_type: hotkey
+  default: alt-meta-m
+
+- name: rope_refactor.hotkeys.extract_variable
+  description: "Extract variable"
+  input_type: hotkey
+  default: alt-meta-v
+
+- name: rope_refactor.add_toolbar_buttons
+  description: "Add toolbar buttons"
+  input_type: checkbox
+  default: false
+
+- name: rope_refactor.actions.rename.icon
+  description: "Rename button icon"
+  input_type: text
+  default: 'fa-address-card'
+
+- name: rope_refactor.actions.inline.icon
+  description: "Inline button icon"
+  input_type: text
+  default: 'fa-info'
+
+- name: rope_refactor.actions.extract_method.icon
+  description: "Extract method button icon"
+  input_type: text
+  default: 'fa-object-group'
+
+- name: rope_refactor.actions.extract_variable.icon
+  description: "Extract variable button icon"
+  input_type: text
+  default: 'fa-magic'
