@@ -1,0 +1,6 @@
+Type: Jupyter Notebook Extension
+Compatibility: 5.x
+Name: Line Edit
+Main: main.js
+Link: README.md
+Description: Duplicate and delete lines using Ctrl+Alt+D and Ctrl+Alt+K.
