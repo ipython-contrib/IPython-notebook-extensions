@@ -1,0 +1,67 @@
+.spc-dialog-btn {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.spc-btn-li {
+  padding-bottom: 10px;
+}
+
+.text-input-area {
+  width: -webkit-fill-available;
+  border: 1px solid rgb(166, 166, 166);
+  font-size: 16px;
+}
+
+.suggestions {
+  width: -webkit-fill-available;
+  font-size: 16px !important;
+}
+
+.suggestions option {
+  color: #e29a40 !important;
+}
+
+.CodeMirror
+  .cm-spell-bold:not(.cm-url):not(.cm-comment):not(.cm-tag):not(.cm-word) {
+  font-weight: bold;
+  color: red !important;
+}
+
+.CodeMirror
+  .cm-spell-underline:not(.cm-url):not(.cm-comment):not(.cm-tag):not(.cm-word) {
+  text-decoration: underline;
+  text-decoration-color: red !important;
+}
+
+#spc_dropdown li a {
+  color: black !important;
+}
+
+.spc_btn {
+  background: #e9d2b4 !important;
+  color: black !important;
+  border: 1px solid rgb(166, 166, 166);
+  font-size: 18px;
+}
+
+.new_word {
+  border: 1px solid rgb(166, 166, 166);
+  font-size: 16px;
+}
+
+.spc-modal {
+  background: #e9d2b4 !important;
+}
+
+.spc-modal .CodeMirror-lines {
+  min-height: 100px;
+}
+
+.spc-font {
+  color: black !important;
+}
+
+.spc-on {
+  background-color: #35be23;
+}

@@ -1,0 +1,117 @@
+#nbextension-planner {
+  position: fixed;
+  right: 10px;
+  top: 140px;
+  background-color: #e9d2b4;
+  border-left: 1px solid #aaa;
+  border-top: 1px solid #aaa;
+  height: 100%;
+  overflow: auto;
+  margin-top: -32px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.icon-bar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.icon-bar a {
+  float: left;
+  text-align: center;
+  width: 10%;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4caf50;
+}
+
+.CodeMirror {
+  height: 80% !important;
+  min-height: 10px !important;
+  padding: 0px !important;
+  background-color: inherit;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.CodeMirror-scroll {
+  min-height: 10px !important;
+}
+
+.editor-toolbar {
+  background-color: #e9d2b4;
+  opacity: 1 !important;
+  font-size: 17px !important;
+}
+
+.editor-toolbar a {
+  color: #000 !important;
+}
+
+.editor-statusbar {
+  color: #000 !important;
+  background-color: #e9d2b4;
+  font-size: 15px !important;
+  text-align: center !important;
+}
+
+.editor-toolbar button.active,
+.editor-toolbar button:hover {
+  background: #e29a40 !important;
+}
+
+img[alt~="imagewidth=planner-20"] {
+  width: 20%;
+  display: block;
+}
+
+img[alt~="imagewidth=planner-30"] {
+  width: 30%;
+  display: block;
+}
+
+img[alt~="imagewidth=planner-40"] {
+  width: 40%;
+  display: block;
+}
+
+img[alt~="imagewidth=planner-50"] {
+  width: 50%;
+  display: block;
+}
+
+img[alt~="imagewidth=planner-60"] {
+  width: 60%;
+  display: block;
+}
+
+img[alt~="imagewidth=planner-70"] {
+  width: 70%;
+  display: block;
+}
+
+img[alt~="imagewidth=planner-80"] {
+  width: 80%;
+  display: block;
+}
+
+img[alt~="imagewidth=planner-90"] {
+  width: 90%;
+  display: block;
+}
+
+img[alt~="imagewidth=planner-100"] {
+  width: 100%;
+  display: block;
+}

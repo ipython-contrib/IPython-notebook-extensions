@@ -1,0 +1,11 @@
+.voice-control-on {
+  background-color: #35be23;
+}
+.voice-scrollbar {
+  position: relative;
+  height: 250px;
+  overflow: auto;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}

@@ -5,6 +5,8 @@ include CONTRIBUTING.md
 include CHANGELOG.md
 include tox.ini
 include .bumpversion.cfg
+include *.yaml
+include *.yml
 
 # explicit excludes
 exclude .travis.yml
