@@ -91,7 +91,7 @@ templates, pre-/postprocessors, and exporters.
 ### PIP
 
 All of the nbextensions in this repo are provided as parts of a python package,
-which is installable in the usual manner, using `pip` or the `setup.py` script.
+which is installable in the usual manner using `pip` or the `setup.py` script.
 To install the current version from PyPi, simply type
 
     pip install jupyter_contrib_nbextensions
@@ -115,8 +115,8 @@ You can install both using
     conda install -c conda-forge jupyter_contrib_nbextensions
 
 This also automatically installs the Javascript and CSS files
-(using `jupyter contrib nbextension install --sys-prefix`), so the second
-installation step below can therefore be skipped.
+(using `jupyter contrib nbextension install --sys-prefix`), therefore 
+the second installation step below can be skipped.
 
 
 ### Installation from cloned Repo
@@ -154,7 +154,7 @@ including
  * `--sys-prefix` to install into python's `sys.prefix`, useful for instance in
    virtual environments, such as with conda
  * `--symlink` to symlink the nbextensions rather than copying each file
-   (recommended, on non-Windows platforms).
+   (recommended on non-Windows platforms).
  * `--debug`, for more-verbose output
 
 In addition, two further option flags are provided to perform either only the
@@ -203,7 +203,7 @@ their options. You can then open the `nbextensions` tab on the tree
 (dashboard/file browser) notebook page to configure nbextensions.
 You will have access there to a dashboard where extensions can be
 enabled/disabled via checkboxes.
-Additionally a short documentation for each extension is displayed, and
+Additionally, a short documentation for each extension is displayed, and
 configuration options are presented.
 
 ![jupyter_nbextensions_configurator](https://raw.githubusercontent.com/Jupyter-contrib/jupyter_nbextensions_configurator/master/src/jupyter_nbextensions_configurator/static/nbextensions_configurator/icon.png)
@@ -215,7 +215,10 @@ configuration options are presented.
 For complex or customized installation scenarios, please look at the
 documentation for installing notebook extensions, server extensions, nbconvert
 pre/postprocessors and templates on the [Jupyter homepage](https://jupyter.org).
-Most nbextensions here should work fine with jupyterhub (because jupyterhub spawns regular notebook servers for each individual user), but won't work with jupyterlab (because the jupyterlab javascript framework is different to notebook's, and still rapidly changing under active development).
+Most nbextensions here should work fine with JupyterHub (because JupyterHub spawns 
+regular notebook servers for each individual user), but won't work with JupyterLab 
+(because the Javascript framework of JupyterLab is different from the notebook's, and 
+is still rapidly changing under active development).
 
 See also [installing Jupyter](https://jupyter.readthedocs.io/en/latest/install.html)
 
