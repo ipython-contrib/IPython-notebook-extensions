@@ -28,7 +28,10 @@ def _getshapeof(x):
     try:
         return x.shape
     except AttributeError: #x does not have a shape
-        return None
+        try:
+            return len(x)
+        except TypeError: #object of type .. has no len()
+            return None
 
 def _getcontentof(x):
     length = 150
